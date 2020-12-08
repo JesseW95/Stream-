@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Stream+",
+    "description": "This extension lets you select a livestreaming chat box and use emotes from stream+",
+    "version": "1.0",
+    "homepage_url": "http://127.0.0.1",
+    "browser_action": {
+        "default_icon": "favicon.png",
+        "default_popup": "popup.html",
+        "default_title": "ChromiePop"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "css": ["sp_styles.css"],
+        "all_frames": true,
+        "js":      ["jquery.min.js","content.js"]
+    }],
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
+}
